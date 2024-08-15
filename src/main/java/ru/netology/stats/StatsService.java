@@ -21,10 +21,10 @@ public class StatsService {
     }
 
     //номер месяца, в котором был пик продаж
-    public long maxSales(long[] sales) {
-        long maxMonth = 0;
-        for (long i = 0; i < sales.length; i++) {
-            if (sales[(int) i] >= sales[(int) maxMonth]) {
+    public int maxSales(long[] sales) {
+        int maxMonth = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] >= sales[maxMonth]) {
                 maxMonth = i;
             }
         }
@@ -32,10 +32,10 @@ public class StatsService {
     }
 
     //номер месяца, в котором был минимум продаж
-    public long minSales(long[] sales) {
-        long minMonth = 0;
-        for (long i = 0; i < sales.length; i++) {
-            if (sales[(int) i] <= sales[(int) minMonth]) {
+    public int minSales(long[] sales) {
+        int minMonth = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] <= sales[minMonth]) {
                 minMonth = i;
             }
         }
@@ -49,7 +49,7 @@ public class StatsService {
             sum += sale;
         }
         long averageSales = sum / 12;
-        long n = 0;
+        int n = 0;
         long average = averageSales;
         for (long sale : sales) {
             if (sale < average) {
@@ -66,7 +66,7 @@ public class StatsService {
             sum += sale;
         }
         long averageSales = sum / 12;
-        long n = 0;
+        int n = 0;
         long average = averageSales;
         for (long sale : sales) {
             if (sale > average) {
